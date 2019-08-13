@@ -1,0 +1,33 @@
+     <Container>
+        <Row>
+          <Header>
+          <h6>Viagens</h6>
+          </Header>
+        <table>
+        <thead>
+          <tr>
+              <th>Destino</th>
+              <th>Saída</th>
+              <th>Data</th>
+              <th>Status</th>
+              <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {this.state.travels.map(travel => {
+          return (
+          <tr>
+            <td>{travel.to}</td>
+            <td>{travel.from}</td>
+            <td>{travel.date_start}</td>
+            <td><span class="new badge" data-badge-caption={travel.from}></span></td>
+            <Link key={travel._id} item={travel} to={`/travel/${this.state.travels._id}`}><button>Edit</button></Link>
+          </tr>
+                    )
+          })}
+        </tbody>
+      </table>
+      </Row>
+      </Container>
+      </>
